@@ -1,4 +1,74 @@
-let now_playing = document.querySelector('.now-playing');
+let now_playing = document.querySelector('#app');
+now_playing.innerHTML = `
+<div class="player">
+    <div class="wrapper">
+      <div class="top-bar">
+        <i class="material-icons">expand_more</i>
+        <span>Wait...</span>
+        <i class="material-icons">more_horiz</i>
+      </div>
+  
+      <div class="img-area">
+        <img src="" alt="">
+      </div>
+  
+      <div class="song-details">
+        <p class="name"></p>
+        <p class="artist"></p>
+      </div>
+  
+      <div class="progress-area">
+        <div class="progress-bar">
+          <audio id="main-audio" src=""></audio>
+          <span></span>
+        </div>
+        <div class="song-timer">
+          <span class="current-time">0:00</span>
+          <span class="max-duration">0:00</span>
+        </div>
+      </div>
+  
+      <div class="volume">
+        <p id="volume_show">92</p>
+        <i class="material-icons" aria-hidden="true" onclick="mute_sound()" id="volume_icon">volume_up</i>
+        <input type="range" min="0" max="100" value="92" onchange="volume_change()" id="volume">
+      </div>
+  
+      <div class="controls">
+        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+        <i id="prev" class="material-icons">skip_previous</i>
+        <div class="play-pause">
+          <i class="material-icons play">play_arrow</i>
+        </div>
+        <i id="next" class="material-icons">skip_next</i>
+        <i id="more-music" class="material-icons">queue_music</i>
+      </div>
+  
+      <div id="wave">
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+        <span class="stroke"></span>
+      </div>
+  
+      <div class="music-list">
+        <div class="header">
+          <div class="row">
+            <i class="list material-icons">queue_music</i>
+            <span>Music list</span>
+          </div>
+          <i id="close" class="material-icons">close</i>
+        </div>
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+`;
 const wrapper = document.querySelector(".wrapper"),
 topBar = document.querySelector(".top-bar span"),
 musicImg = wrapper.querySelector(".img-area img"),
@@ -19,8 +89,6 @@ let recent_volume = document.querySelector('#volume');
 let volume_show = document.querySelector('#volume_show');
 let volume_icon = document.querySelector('#volume_icon');
 let wave = document.getElementById('wave');
-
-
 
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 isMusicPaused = true;
