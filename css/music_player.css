@@ -111,10 +111,10 @@ drK .top-bar::after {
   z-index: 1;
 }
 .drK .img-area {
-  border: 5px solid var(--contentB);
+  border: 5px solid var(--waveB);
 }
 .drK .img-area:before {
-  box-shadow: inset 0 0 0 2px var(--contentB);
+  box-shadow: inset 0 0 0 2px var(--waveB);
 }
 .img-area img {
   width: 100%;
