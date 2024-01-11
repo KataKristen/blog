@@ -92,7 +92,7 @@ drK .top-bar::after {
   width: 185px;
   height: 185px;
   margin: 15px auto 0;
-  border: 5px solid var(--darkBs);
+  border: 5px solid var(--waveB);
   border-radius: 50%;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.364);
   z-index: 3;
@@ -107,7 +107,7 @@ drK .top-bar::after {
   transform: translate(-50%, -50%);
   background-color: var(--contentB);
   border-radius: 50%;
-  box-shadow: inset 0 0 0 2px var(--darkBs);
+  box-shadow: inset 0 0 0 2px var(--waveB);
   z-index: 1;
 }
 .drK .img-area {
